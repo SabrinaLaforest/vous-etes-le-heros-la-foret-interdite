@@ -9,4 +9,5 @@ La forêt interdite
 <b>Palette de couleur:</b> <a href="https://coolors.co/ebede9-979b97-845a6d-3e1929-002921"> coolors.co </a>
 
 <h2> Diagramme </2>
+</br>
 <img src="assets/dia.png" alt="diagramme">
