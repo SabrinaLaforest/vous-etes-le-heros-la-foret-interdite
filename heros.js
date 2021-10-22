@@ -112,14 +112,15 @@ function goToChapter (chapterName) {
     for(let index = 0; index <= chapitre.options.length-1; index++) {
         document.getElementsByClassName("buttons")[index].textContent = chapitre.options[index].text;
         document.getElementsByClassName("buttons")[index].setAttribute('onclick', chapitre.options[index].action);
-    }
+    } 
 }
 
 let itemFound = false;
 
-function itemFounded (chapterName.item){
-    let chapitre = chapterObj[chapterName.item];
+function keyFounded(){
+    goToChapter("item");
     itemFound = true;
+    console.log("ok");
 }
 
 goToChapter("chapitre1");
