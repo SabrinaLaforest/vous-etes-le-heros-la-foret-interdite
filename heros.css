@@ -1,54 +1,53 @@
-body{
-  background-color: #EBEDE9;
+body {
+  background-color: #ebede9;
 }
 
-.parent{
-    font-family:"Courier New", monospace;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    color: #EBEDE9;
-    text-align: center;
-  }
-  
-  .game{
-    background-color: #002921;
-    height: 600px;
-    width: 800px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    
-  }
-  
-  .Forest{
-    width: 400px;
-    height: 300px;
-  }
-  
-  .button{
-    margin: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-grow: 1;
-    width: 700px;
-  }
-  
-  .buttons{
-    flex-grow: 1;
-    margin: 10px;
-    font-family:"Courier New", monospace;
-    background-color:#979B97;
-  }
+.parent {
+  font-family: "Courier New", monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: #ebede9;
+  text-align: center;
+}
 
-  @font-face{
-    font-family: vademecum;
-    src: url(assets/vademecum.ttf); 
-  }
+.game {
+  background-color: #002921;
+  height: 600px;
+  width: 800px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
 
-  h1{
-    font-family: vademecum;
-  }
+.Forest {
+  width: 400px;
+  height: 300px;
+}
+
+.button {
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  width: 700px;
+}
+
+.buttons {
+  flex-grow: 1;
+  margin: 10px;
+  font-family: "Courier New", monospace;
+  background-color: #979b97;
+}
+
+@font-face {
+  font-family: vademecum;
+  src: url(assets/vademecum.ttf);
+}
+
+h1 {
+  font-family: vademecum;
+}
