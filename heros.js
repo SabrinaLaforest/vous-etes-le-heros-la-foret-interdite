@@ -41,6 +41,7 @@ const chapterObj = {
     subtitle: "Les centaures",
     text: "T'echappant de justesse tu cours dans la foret suivant le chemin de terre raffermi par l'usure. Malhereusement, un petit groupe de centaure arme de leur arc a fleche se retrouve face a toi.",
     img: "arc.jpg",
+    video: "arrow.mp4",
     options: [
       {
         text: "Immobilis",
@@ -91,6 +92,7 @@ const chapterObj = {
     subtitle: "Mort",
     text: "Malhereusement, la foret interdite etait bien plus dangereuse que tu ne le croyais. Les ennemis t'ont vaincus. Veux-tu reessayer?",
     img: "corbeau.jpg",
+    video: "dead.mp4",
     options: [
       {
         text: "Debut",
@@ -136,6 +138,13 @@ function goToChapter(chapterName) {
     btnsCode += `<button class="buttons" onclick="${option.action}">${option.text}</button>`;
   }
   btnsContainer.innerHTML = btnsCode;
+
+  let btn = document.querySelector(".button");
+  btn.addEventListener("click", function(){
+    let son = new Audio("assets/pickupCoin.mp3");
+    son.play();
+    console.log("allo");
+  });
 }
 
 let itemFound = false;
