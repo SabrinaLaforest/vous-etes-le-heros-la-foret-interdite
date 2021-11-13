@@ -126,11 +126,17 @@ const chapterObj = {
 
 function goToChapter(chapterName) {
   let chapitre = chapterObj[chapterName];
-
+  
+  if (chapitre.video !== undefined){
+    document.querySelector(".media").innerHTML = `<video src="assets/${chapitre.video}" muted autoplay loop></video>`
+  } else {
+    document.querySelector(".media").innerHTML = `<img src="assets/${chapitre.img}" class="Forest" alt="Forest" />`
+  }
+  
   document.getElementsByClassName("subtitle")[0].innerHTML = `<h3>${chapitre.subtitle}</h3>`;
   document.getElementsByClassName("text")[0].textContent = chapitre.text;
-  document.getElementsByClassName("Forest")[0].src = `assets/${chapitre.img}`;
-
+  
+  
   const btnsContainer = document.querySelector(".button");
   let btnsCode = "";
   for (let index = 0; index < chapitre.options.length; index++) {
@@ -138,13 +144,18 @@ function goToChapter(chapterName) {
     btnsCode += `<button class="buttons" onclick="${option.action}">${option.text}</button>`;
   }
   btnsContainer.innerHTML = btnsCode;
-
-  let btn = document.querySelector(".button");
-  btn.addEventListener("click", function(){
-    let son = new Audio("assets/pickupCoin.mp3");
-    son.play();
-    console.log("allo");
+  
+  
+  let btnArr = document.querySelectorAll(".buttons");
+  
+  btnArr.forEach(function(btn){
+    btn.addEventListener("click", function(){
+      let son = new Audio("assets/pickupCoin.mp3");
+      son.play();
+    });
   });
+  
+  localStorage.setItem("chapitreCLE", chapterName);
 }
 
 let itemFound = false;
@@ -152,6 +163,19 @@ let itemFound = false;
 function keyFounded() {
   itemFound = true;
   goToChapter("item");
+  
+  localStorage.setItem("itemCLE", "true");
 }
 
-goToChapter("chapitre1");
+function start(){
+  let chapitreCLE = localStorage.getItem("chapitreCLE")
+  if (chapitreCLE !== undefined ){
+    goToChapter(chapitreCLE);
+  } else { goToChapter("chapitre1")}
+  
+  if (localStorage.getItem("itemCLE") !== undefined){
+    itemFound = true;
+  } else {itemFound = false;}
+}
+
+start();
