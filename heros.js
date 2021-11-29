@@ -124,8 +124,11 @@ const chapterObj = {
   },
 };
 
+let son = new Audio("assets/pickupCoin.mp3");
+
 function goToChapter(chapterName) {
   let chapitre = chapterObj[chapterName];
+  console.log(chapterName, chapitre)
   
   if (chapitre.video !== undefined){
     document.querySelector(".media").innerHTML = `<video src="assets/${chapitre.video}" muted autoplay loop></video>`
@@ -146,14 +149,8 @@ function goToChapter(chapterName) {
   btnsContainer.innerHTML = btnsCode;
   
   
-  let btnArr = document.querySelectorAll(".buttons");
-  
-  btnArr.forEach(function(btn){
-    btn.addEventListener("click", function(){
-      let son = new Audio("assets/pickupCoin.mp3");
-      son.play();
-    });
-  });
+  son.currentTime = 0;    
+  son.play();
   
   localStorage.setItem("chapitreCLE", chapterName);
 }
@@ -169,13 +166,17 @@ function keyFounded() {
 
 function start(){
   let chapitreCLE = localStorage.getItem("chapitreCLE")
-  if (chapitreCLE !== undefined ){
+  if (chapitreCLE !== null ){
     goToChapter(chapitreCLE);
-  } else { goToChapter("chapitre1")}
+  } else { 
+    goToChapter("chapitre1")
+  }
   
   if (localStorage.getItem("itemCLE") !== undefined){
     itemFound = true;
-  } else {itemFound = false;}
+  } else {
+    itemFound = false;
+  }
 }
 
 start();
