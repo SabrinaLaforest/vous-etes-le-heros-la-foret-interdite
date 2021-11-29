@@ -125,6 +125,8 @@ const chapterObj = {
 };
 
 let son = new Audio("assets/pickupCoin.mp3");
+let sonBtn = document.querySelector(".sonCheckBox");
+sonBtn.checked = true;
 
 function goToChapter(chapterName) {
   let chapitre = chapterObj[chapterName];
@@ -149,8 +151,12 @@ function goToChapter(chapterName) {
   btnsContainer.innerHTML = btnsCode;
   
   
-  son.currentTime = 0;    
-  son.play();
+  if (sonBtn.checked === false){
+    son.pause;
+  } else {
+    son.currentTime = 0;    
+    son.play();
+  }
   
   localStorage.setItem("chapitreCLE", chapterName);
 }
@@ -178,5 +184,14 @@ function start(){
     itemFound = false;
   }
 }
+
+let resetBtn = document.querySelector(".resetBTN")
+
+resetBtn.addEventListener ("click", function reset () {
+  itemFound = false;
+  localStorage.clear();
+  goToChapter("chapitre1");
+});
+
 
 start();

@@ -1,5 +1,5 @@
 body {
-  background-color: #ebede9;
+  background-color: #003D31;
 }
 
 .parent {
@@ -20,6 +20,7 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  padding: 20px;
 }
 
 .Forest {
@@ -50,4 +51,8 @@ body {
 
 h1 {
   font-family: vademecum;
+}
+
+.reset-son{
+  transform: translate(-100%);
 }
