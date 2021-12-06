@@ -126,10 +126,11 @@ const chapterObj = {
 
 let son = new Audio("assets/pickupCoin.mp3");
 let sonBtn = document.querySelector(".sonCheckBox");
-sonBtn.checked = false;
+sonBtn.checked = true;
 
 function goToChapter(chapterName) {
   let chapitre = chapterObj[chapterName];
+  let body = document.querySelector("body");
   console.log(chapterName, chapitre)
   
   if (chapitre.video !== undefined){
@@ -159,6 +160,16 @@ function goToChapter(chapterName) {
   }
   
   localStorage.setItem("chapitreCLE", chapterName);
+  
+  /* classes css */
+  if (chapitre === "prison") {
+    console.log("ok");
+    body.classList.toggle("");
+    
+    if (chapterObj["prison"] == true) {
+    console.log("ok");
+  } 
+  }
 }
 
 let itemFound = false;
