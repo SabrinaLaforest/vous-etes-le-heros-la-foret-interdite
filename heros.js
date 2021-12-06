@@ -126,7 +126,7 @@ const chapterObj = {
 
 let son = new Audio("assets/pickupCoin.mp3");
 let sonBtn = document.querySelector(".sonCheckBox");
-sonBtn.checked = true;
+sonBtn.checked = false;
 
 function goToChapter(chapterName) {
   let chapitre = chapterObj[chapterName];
