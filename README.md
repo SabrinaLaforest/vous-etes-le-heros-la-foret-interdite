@@ -1,6 +1,7 @@
 La forêt interdite
 
 <a href="https://smnarnold.com/projets/vous-etes-le-heros"> Developpement web - Projet vous êtes le héros </a>
+<b>En ligne:</b> <a href="https://sabrinalaforest.github.io/vous-etes-le-heros-la-foret-interdite/"> </a>
 
 <b>Genre:</b> Fantasy, Action
 
@@ -11,3 +12,4 @@ La forêt interdite
 <h2> Diagramme </2>
 </br>
 <img src="assets/dia.png" alt="diagramme">
+
