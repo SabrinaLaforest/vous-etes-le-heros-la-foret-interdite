@@ -56,3 +56,59 @@ h1 {
 .reset-son{
   transform: translate(-100%);
 }
+
+.mort {
+  background-color:#262626;
+  animation: morte 3s linear;
+  transition-duration: 0.2s;
+}
+
+@keyframes morte {
+  0% {
+    opacity: 100%;
+    transform: scale(0.6);
+  }
+  50% {
+    opacity: 0%;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 100%;
+    transform: scale(1);
+  }
+}
+
+.gamemort {
+  background-color: #050505;
+}
+
+.debut {
+  background-image: url("assets/forest1.jpg");
+  background-size: 100% 100%;
+  animation: foret 1s linear;
+  transition-duration: 0.1s;
+}
+
+@keyframes foret {
+  0% {
+    transform: scale(0.6) rotate(45deg);
+  }
+  50% {
+    transform: scale(0.8) rotate(20deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.debutgame{
+  background-color: #002921;
+  opacity: 0.85;
+  font-family: jedi;
+  font-size: 15px;
+}
+
+@font-face {
+  font-family: jedi;
+  src: url(assets/Starjedi.ttf);
+}

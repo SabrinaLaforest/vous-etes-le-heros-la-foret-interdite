@@ -118,7 +118,7 @@ const chapterObj = {
     options: [
       {
         text: "Recommencer",
-        action: "goToChapter('Debut')",
+        action: "goToChapter('chapitre1')",
       },
     ],
   },
@@ -131,7 +131,7 @@ sonBtn.checked = true;
 function goToChapter(chapterName) {
   let chapitre = chapterObj[chapterName];
   let body = document.querySelector("body");
-  console.log(chapterName, chapitre)
+  /*console.log(chapterName, chapitre)*/
   
   if (chapitre.video !== undefined){
     document.querySelector(".media").innerHTML = `<video src="assets/${chapitre.video}" muted autoplay loop></video>`
@@ -161,14 +161,20 @@ function goToChapter(chapterName) {
   
   localStorage.setItem("chapitreCLE", chapterName);
   
-  /* classes css */
-  if (chapitre === "prison") {
+  let game = document.querySelector(".gameMain");
+
+  console.log(chapitre);
+    if (chapitre.subtitle === "Azkaban") {
     console.log("ok");
-    body.classList.toggle("");
-    
-    if (chapterObj["prison"] == true) {
-    console.log("ok");
-  } 
+    body.classList.toggle("mort");
+    game.classList.toggle("gamemort");
+  } else if (chapitre.subtitle === "Le reveil"){
+    body.classList.toggle("debut");
+    game.classList.toggle("debutgame");
+  }
+  else {
+    body.classList.remove("mort", "debut");
+    game.classList.remove("gamemort", "debutgame");
   }
 }
 
